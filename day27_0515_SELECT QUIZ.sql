@@ -1,0 +1,15 @@
+SELECT employee_id, first_name, last_name, hire_date, salary FROM employees;
+SELECT FIRST_NAME || ' ' || LAST_NAME AS name FROM employees;
+SELECT * FROM employees where department_id = 50;
+SELECT first_name, last_name, job_id, department_id FROM employees WHERE department_id = 50;
+SELECT first_name, last_name, salary + 300 FROM employees;
+SELECT first_name, last_name, salary FROM employees WHERE salary >= 10000;
+SELECT * FROM employees WHERE commission_pct IS NOT NULL;
+SELECT first_name, last_name, hire_date, salary FROM employees WHERE hire_date BETWEEN '2003/01/01' AND '2003/12/31';
+SELECT first_name, last_name, hire_date, salary FROM employees WHERE hire_date LIKE '%03%';
+SELECT first_name, last_name, salary FROM employees ORDER BY salary DESC;
+SELECT first_name, last_name, salary FROM employees WHERE department_id = 60 ORDER BY salary DESC ;
+SELECT first_name, last_name, job_id FROM employees WHERE job_id IN ('IT_PROG', 'SA_MAN');
+SElECT first_name || ' ' || last_name || 'Steven King 사원의 급여는' || salary AS "Steven King salary" FROM employees WHERE first_name = 'Steven' AND last_name = 'King';
+SELECT first_name, last_name, job_id FROM employees WHERE job_id LIKE '%MAN%';
+SELECT first_name, last_name, job_id FROM employees WHERE job_id LIKE '%MAN%' ORDER BY job_id ASC;
