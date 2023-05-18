@@ -100,3 +100,25 @@ FROM employees e1
 LEFT JOIN employees e2
 ON e1.manager_id = e2.employee_id;
 
+----------------------------------------------------------------------
+-- 오라클 조인 구문
+-- FROM절 아래에 테이블을 나열, WHERE에 JOIN의 조건을 쓴다
+
+-- INNER JOIN
+SELECT * 
+FROM employees e, departments d
+WHERE e.department_id = d.department_id;
+
+-- LEFT JOIN
+SELECT * 
+FROM employees e, departments d
+WHERE e.department_id = d.department_id(+); -- 붙일 테이블에 (+)
+
+-- RIGHT JOIN
+SELECT * 
+FROM employees e, departments d
+WHERE e.department_id(+) = d.department_id; -- 붙일 테이블에 (+)
+
+-- FULL JOIN은 없다
+-- 조건이 있다면 AND로 연결해서 사용
+ 
