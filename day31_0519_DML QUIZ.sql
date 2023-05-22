@@ -35,8 +35,8 @@ commit;
 --3. department_name이 IT Helpdesk인 데이터의 부서명을 IT Help로 , 매니저아이디를 303으로, 지역아이디를 1800으로 변경하세요
 UPDATE depts
 SET department_name = 'IT Help',
-    manager_id = '303',
-    location_id = '1800'
+    manager_id = 303,
+    location_id = 1800
 WHERE department_name = 'IT Helpdesk';
 
 SELECT * FROM depts;
@@ -45,7 +45,7 @@ commit;
 --4. 재정, 인사, 영업의 매니저아이디를 301로 한번에 변경하세요.
 SELECT * FROM depts;
 UPDATE depts
-SET manager_id = '301'
+SET manager_id = 301
 WHERE department_name IN('재정', '인사', '영업');
 
 commit;
@@ -55,7 +55,7 @@ commit;
 --1. 부서명 영업부를 삭제 하세요
 select * FROM depts;
 DELETE FROM depts
-WHERE department_id = '320';
+WHERE department_id = 320;
 
 DELETE FORM depts
 WHERE department_id = (SELECT department_id
@@ -63,7 +63,7 @@ WHERE department_id = (SELECT department_id
                        WHERE department_name = '영업');
 --2. 부서명 NOC를 삭제하세요
 DELETE FROM depts
-WHERE department_id = '220';
+WHERE department_id = 220;
 
 DELETE FORM depts
 WHERE department_id = (SELECT department_id
@@ -81,7 +81,7 @@ COMMIT;
 --2. Depts 사본테이블의 manager_id가 null이 아닌 데이터의 manager_id를 전부 100으로 변경하세요.
 SELECT * FROM depts;
 UPDATE depts
-SET manager_id = '100'
+SET manager_id = 100
 WHERE manager_id IS NOT NULL
 ;
 
