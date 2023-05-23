@@ -1,0 +1,5 @@
+CREATE TABLE DEMO(
+    demo_num VARCHAR2(10)
+);
+
+INSERT INTO demo VALUES('A');
